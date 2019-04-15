@@ -45,13 +45,11 @@ def show_cred(username):
 	Displays saved credentials
 	'''
 	return Credentials.show_credentials(username)
-
-	
 	
 def main():
 	print("Welcome to Komo password Vault app")
 	while True:
-		print("**************\n"*10)
+		print("**************"*10)
 		print("Please use the following short codes to interact with this application app\n li - Login\n cu - Register\n lo - Logout")
 		user_input = input("Enter input here: ")
 		
@@ -71,7 +69,7 @@ def main():
 				print(f"Welcome {username}. Your login was successful")
 				
 				while True:
-					print("**********\n"*10)
+					print("**********"*10)
 					print("Please use the following short codes to use the Password Vault")
 					user_input = input("cc - Save new credentials\n ccp - Create new credentials with Generated Password\n dc - Display credentials\n del - Delete credentials\n ex - Exit")
 					
