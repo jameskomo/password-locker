@@ -40,7 +40,7 @@ To run the application, in your terminal:
 ### Tests
 Test Driven Approach has been used in this application. Python Uniittesting framework has been used in the test cases. For testing, run the following command in terminal:
 ```sh
-    python3.6 test_password_locker.py
+    python3.6 test_user_cred.py
 ```
 
 

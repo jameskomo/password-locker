@@ -14,16 +14,16 @@ class TestUsers(unittest.TestCase):
 		"""
 			#Function creates a new user object
 		"""
-		self.new_user = Users("Simon","Gatheru","W3w3n!mkenya")
+		self.new_user = Users("komo","james","pswd001")
 		
 	def test_init(self):
 		"""
 		#test_init test case to test if the object is the initialized properly
 		"""
 		
-		self.assertEqual(self.new_user.first,"Simon")
-		self.assertEqual(self.new_user.last,"Gatheru")
-		self.assertEqual(self.new_user.password,"W3w3n!mkenya")
+		self.assertEqual(self.new_user.first,"komo")
+		self.assertEqual(self.new_user.last,"james")
+		self.assertEqual(self.new_user.password,"pswd001")
 		
 	def test_save_user(self):
 		"""
@@ -35,7 +35,7 @@ class TestUsers(unittest.TestCase):
 		
 	def tearDown(self):
 		"""
-		#Function to reinitialize back to square one
+		Function to Destruct functions after set up
 		"""
 		Users.user_info = []
 
@@ -112,9 +112,19 @@ class TestCredentials(unittest.TestCase):
 		self.new_cred.save_cred()
 		IG = Credentials("komo","james","IG","pswd001")
 		IG.save_cred()
-		# self.assertEqual(Credentials.find_platform('IG'),IG)
+		self.assertEqual(Credentials.find_platform('IG'),IG)
 		
-
+	def test_del_cred(self):
+		"""
+		test_del_cred test to delete credentials from the credentials list
+		"""
+		Credentials.credentials_info = []
+		self.new_cred = Credentials("komo","james","IG","pswd001")
+		self.new_cred.save_cred()
+		IG = Credentials("komo","james","IG","pswd001")
+		IG.save_cred()
+		del_item = Credentials.find_platform('IG')
+		self.assertEqual(Credentials.del_cred(del_item),"Deleted")
 	
 	
 if __name__ == '__main__':
