@@ -33,13 +33,20 @@ def save_cred(cred):
 	'''
 	Credentials.save_cred(cred)
 
-
+def password_gen(size):
+	'''
+	Generates a random password_gen
+	'''
+	random = Credentials.password_gen(size)
+	return random
 
 def show_cred(username):
 	'''
-	Dsiplays saved credentials
+	Displays saved credentials
 	'''
 	return Credentials.show_credentials(username)
+
+	
 	
 def main():
 	print("Welcome to Komo password Vault app")
