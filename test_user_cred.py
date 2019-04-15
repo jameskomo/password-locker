@@ -25,7 +25,19 @@ class TestUsers(unittest.TestCase):
 		self.assertEqual(self.new_user.last,"Gatheru")
 		self.assertEqual(self.new_user.password,"W3w3n!mkenya")
 		
-
+	def test_save_user(self):
+		"""
+		#test_save_user test case to test if the object is saved
+		"""
+		
+		self.new_user.create_user()
+		self.assertEqual(len(Users.user_info),1)
+		
+	def tearDown(self):
+		"""
+		#Function to reinitialize back to square one
+		"""
+		Users.user_info = []
 
 
 	
@@ -37,19 +49,7 @@ class TestCredentials(unittest.TestCase):
 			unittest.TestCase: Class from the unittest module to create unit tests
 	"""
 
-	def test_auth_check(self):
-		"""
-		test_auth_check test case to test if the user provided correct information
-		"""
-		self.new_user = Users("komo","James","pswd002")
-		self.new_user.create_user()
-		another_user = Users("user2","othername","pswd003")
-		another_user.create_user()
-		
-		for cred in Users.user_info:
-			if cred.first == another_user.first and cred.password == another_user.password:
-				identity = another_user.first
-		return identity
+	
 		
 	def test_setUp(self):
 		"""
