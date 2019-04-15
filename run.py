@@ -1,19 +1,14 @@
 #!/usr/bin/env python3.6
 from user_cred_classes import Users, Credentials
 
+def create_user(first,last,pwd):
+	'''
+	Creates a new user account
+	'''
+	user_new = Users(first,last,pwd)
+	return user_new
 
 
-def register_user(user):
-	'''
-	Saves the created user's account 
-	'''
-	Users.create_user(user)
-	
-def user_check(first,pwd):
-	'''
-	Checks whether user exists before creating any new credentials
-	'''
-	return Credentials.user_check(first,pwd)
 
 def create_cred(name,username,platform,pwd):
 	'''
