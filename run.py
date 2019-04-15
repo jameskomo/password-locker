@@ -8,6 +8,12 @@ def create_user(first,last,pwd):
 	user_new = Users(first,last,pwd)
 	return user_new
 
+def register_user(user):
+	'''
+	Saves the created user's account 
+	'''
+	Users.create_user(user)
+	
 
 
 def create_cred(name,username,platform,pwd):
