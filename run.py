@@ -20,14 +20,20 @@ def user_check(first,pwd):
 	'''
 	return Credentials.user_check(first,pwd)
 
+def create_cred(name,username,platform,pwd):
+	'''
+	Creates credentials to be saved
+	'''
+	create_instance = Credentials(name,username,platform,pwd)
+	return create_instance
+	
+def save_cred(cred):
+	'''
+	Saves created user credentials
+	'''
+	Credentials.save_cred(cred)
 
 
-def password_gen(size):
-	'''
-	Generates a random password_gen
-	'''
-	random = Credentials.password_gen(size)
-	return random
 
 def show_cred(username):
 	'''
