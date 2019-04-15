@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python3.6
 from user_cred_classes import Users, Credentials
 
 def create_user(first,last,pwd):
