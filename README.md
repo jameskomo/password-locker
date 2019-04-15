@@ -65,5 +65,5 @@ There are no known bugs but in case you come across any feel free to contact me 
 
 ## LICENSE
 
-
+Visit this [Link](https://github.com/jameskomo/password-locker/blob/master/LICENSE) for license information
 
