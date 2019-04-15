@@ -80,7 +80,13 @@ class TestCredentials(unittest.TestCase):
 		self.assertEqual(self.new_cred.platform, "IG")
 		self.assertEqual(self.new_cred.pwd, "pswd001")
 		
-	
+	def test_save_cred(self):
+		"""
+		test_save_cred to check if the initialized object is saved to credentials_info
+		"""
+		self.new_cred = Credentials("komo","james","IG","pswd001")
+		self.new_cred.save_cred()
+		self.assertEqual(len(Credentials.credentials_info),5)
 		
 	def tearDowm(self):
 		"""
@@ -98,15 +104,6 @@ class TestCredentials(unittest.TestCase):
 		self.another_cred.save_cred()
 		self.assertEqual(len(Credentials.show_credentials(self.new_cred.username)),1)
 	
-	def test_find_platform(self):
-		"""
-		test_find_platform test to search credentials per account
-		"""
-		self.new_cred = Credentials("komo","james","IG","pswd001")
-		self.new_cred.save_cred()
-		IG = Credentials("komo","james","IG","pswd001")
-		IG.save_cred()
-		# self.assertEqual(Credentials.find_platform('IG'),IG)
 		
 	def test_del_cred(self):
 		"""
