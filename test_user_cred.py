@@ -49,7 +49,19 @@ class TestCredentials(unittest.TestCase):
 			unittest.TestCase: Class from the unittest module to create unit tests
 	"""
 
-	
+	def test_auth_check(self):
+		"""
+		test_auth_check test case to test if the user provided correct information
+		"""
+		self.new_user = Users("komo","James","pswd002")
+		self.new_user.create_user()
+		another_user = Users("user2","othername","pswd003")
+		another_user.create_user()
+		
+		for cred in Users.user_info:
+			if cred.first == another_user.first and cred.password == another_user.password:
+				identity = another_user.first
+		return identity
 		
 	def test_setUp(self):
 		"""
@@ -68,13 +80,7 @@ class TestCredentials(unittest.TestCase):
 		self.assertEqual(self.new_cred.platform, "IG")
 		self.assertEqual(self.new_cred.pwd, "pswd001")
 		
-	def test_save_cred(self):
-		"""
-		test_save_cred to check if the initialized object is saved to credentials_info
-		"""
-		self.new_cred = Credentials("komo","james","IG","pswd001")
-		self.new_cred.save_cred()
-		self.assertEqual(len(Credentials.credentials_info),5)
+	
 		
 	def tearDowm(self):
 		"""
